@@ -18,7 +18,6 @@
     --colorAccent3: hsl(29, 72%, 43%);
     --colorLinkHover: #502D24;
     --colorTextBackground: hsl(27, 60%, 58%);
-    --backgroundImage: "/Asset/sfondo_home_deserto.webp";
     --borderRadius: 10px;
     --pageBorder: 1066px;
     /*Weight: bold=700, semibold=600, medium=500, regular=400, light=300 */
@@ -334,7 +333,7 @@ summary:hover {
 /* HOME ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .home {
-    background-image: var(--backgroundImage);
+    background-image: url(Assets/background_desert.webp);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -354,6 +353,10 @@ summary:hover {
 }
 
 /* COMPETENZE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.sectionComp{
+    margin-bottom: 5%;
+}
 
 .toggle {
     display: inline-block;
@@ -394,15 +397,13 @@ summary:hover {
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
+    gap: 14px;
 }
 
 .cardProg {
     width: 340px;
     height: 507px;
-    margin-left: 0.7%;
-    margin-right: 0.7%;
-    /*dovrebbe essere 14 tra le card*/
-    margin-top: 0px;
+    /* margin-top: 0px; */
     margin-bottom: 7%;
     border-radius: var(--borderRadius);
     display: flex;
@@ -505,9 +506,11 @@ summary:hover {
 }
 
 .imgChiSono{
-    min-width: 345px;
-    height: 508px;
-    background-color:#ff3300;
+    width: 310px;
+    height: 428px;
+    background-color: var(--colorAccent2);
+    object-fit: contain;                        /* img da modificare*/
+    border-radius: var(--borderRadius);
 }
 
 .sectionsChiSono{
