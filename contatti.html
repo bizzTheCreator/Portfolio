@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <center>
+            <nav class="navBar">
+                <h5 class="icon">Martino Bizzotto</h5>
+                <ul class="navBarLinks">
+                    <li><a href="chi-sono.html">
+                            <p>Chi Sono</p>
+                        </a></li>
+                    <li><a href="competenze.html">
+                            <p>Competenze</p>
+                        </a></li>
+                    <li><a href="progetti.html">
+                            <p>Progetti</p>
+                        </a></li>
+                    <li><a href="contatti.html">
+                            <p>Contatti</p>
+                        </a></li>
+                </ul>
+            </nav>
+        </center>
+    </header>
+    <div id="contentContatti" class="content">
+        <center>
+            <div class="titolo">
+                <h2>Contatti</h2>
+                <p>Vuoi dirmi qualcosa? Scrivimi una lettera!</p>
+            </div>
+
+            <form action="https://api.web3forms.com/submit" method="POST" class="lettera">
+                <!-- Honeypot -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                <input type="hidden" name="access_key" value="1cad7a6b-7210-4dd7-b056-6520ed8f8403">
+
+                <!-- <input type="hidden" name="redirect" value=""> --> <!-- METTERE IN VALUE LINK COMPLETO DI PAGINA INVIATO CON SUCCESO  -->
+
+                <div class="sectionLettera">
+                    <label for="name">Il Tuo Nome:</label>
+                    <input type="text" id="name" name="Nome" placeholder=">>" required="required">
+                </div>
+
+                <div class="sectionLettera">
+                    <label for="email">La Tua Email:</label>
+                    <input type="email" id="email" name="Email" placeholder="@" required="required">
+                </div>
+
+                <div class="sectionLettera">
+                    <label for="message">Il Tuo Messaggio:</label>
+                    <textarea name="message" id="message" placeholder="..." required="required" oninput="autoResize(this)"></textarea>
+                </div>
+
+                <div class="sectionLettera">
+                    <label for="send">Invia:</label>
+                    <button type="submit" class="button4">
+                       <p> M </p>
+                    </button>
+                </div>
+
+            </form>
+        </center>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function autoResize(textarea) {
+          textarea.style.height = 'auto';  // Resetta l'altezza
+          textarea.style.height = textarea.scrollHeight + 'px';  // Imposta l'altezza in base al contenuto
+        }
+        </script>
+</body>
+
+</html>

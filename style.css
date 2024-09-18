@@ -1,0 +1,519 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-style: none;
+}
+
+/* DICHIARAZIONE VARIABILI GLOBALI ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+:root {
+    --ff: "Signika", sans-serif;
+    --colorPrimary: #FFEACE;
+    --colorSecondary: #502D24;
+    --colorAccent: hsl(29, 100%, 69%);
+    --colorAccent2: hsl(27, 90%, 58%);
+    --colorAccent3: hsl(29, 72%, 43%);
+    --colorLinkHover: #502D24;
+    --colorTextBackground: hsl(27, 60%, 58%);
+    --backgroundImage: "/Asset/sfondo_home_deserto.webp";
+    --borderRadius: 10px;
+    --pageBorder: 1066px;
+    /*Weight: bold=700, semibold=600, medium=500, regular=400, light=300 */
+    --h1: 700 100.98px/1 var(--ff);
+    /* weight height lineheight fontfamily*/
+    --h2: 700 75.76px/1.1 var(--ff);
+    --h3: 700 56.83px/1.2 var(--ff);
+    --h4: 700 42.63px/1.2 var(--ff);
+    --h5: 600 31.98px/1.3 var(--ff);
+    --h6: 600 23.99px/1.4 var(--ff);
+    --p: 300 18px/1.5 var(--ff);
+    --small: 300 13.5px/1.5 var(--ff);
+}
+
+/* VALORI TAG GLOBALI ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+h1 {
+    font: var(--h1);
+}
+
+h2 {
+    font: var(--h2);
+}
+
+h3 {
+    font: var(--h3);
+}
+
+h4 {
+    font: var(--h4);
+}
+
+h5 {
+    font: var(--h5);
+}
+
+h6 {
+    font: var(--h6);
+}
+
+p {
+    font: var(--p);
+}
+
+small {
+    font: var(--small);
+}
+
+a {
+    color: #502D24;
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    border-radius: var(--borderRadius);
+}
+
+body {
+    background-color: var(--colorPrimary);
+    color: var(--colorSecondary);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    height: 64px;
+    width: 100%;
+    background-color: var(--colorAccent);
+    z-index: 1000;
+}
+
+summary {
+    list-style: none;
+}
+
+summary h4 {
+    display: inline-block;
+}
+
+label{
+    font: var(--p);
+}
+
+input{
+    font: var(--p);
+    color: var(--colorSecondary);
+}
+
+textarea{
+    font: var(--p);
+    resize: none;
+    overflow: hidden;
+    color: var(--colorSecondary);
+}
+
+/* SCREEN SIZE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@media (max-width: 1066px) {
+    .content{
+        width: 80vw;
+    }
+
+    #contentChiSono{
+        flex-wrap: wrap;
+    }
+}
+
+/* CLASSI GLOBALI ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.blur {
+    filter: blur(4.5px);
+}
+
+.hidden {
+    display: none;
+}
+
+.semibold {
+    font-weight: 600;
+}
+
+.content {
+    max-width: var(--pageBorder);
+    /*sarebbe la colonna per tutti i contenuti*/
+    margin: 148px auto;
+}
+
+.button1 {
+    background-color: var(--colorAccent);
+    color: var(--colorSecondary);
+    width: 166px;
+    height: 64px;
+    border-radius: var(--borderRadius);
+    margin: 10px;
+    border-style: hidden;
+    cursor: pointer;
+    transition: scale 0.7s;
+}
+
+.button1:hover {
+    scale: 1.1;
+}
+
+.button2 {
+    color: var(--colorSecondary);
+    padding: 5px 20px;
+    border-radius: var(--borderRadius);
+    margin: 3px;
+    border-style: hidden;
+    cursor: pointer;
+    transition: scale 0.7s;
+}
+
+.button4 {
+    background-color: var(--colorAccent2);
+    color: var(--colorSecondary);
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    margin: 3px;
+    border-style: hidden;
+    cursor: pointer;
+    transition: scale 0.7s;
+}
+
+.correlati {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.titolo {
+    margin-bottom: 84px;
+}
+
+/* .titolo h2 {
+    position: relative;
+}
+
+.titolo h2::before {
+    content: '';
+    position: absolute;
+    top: 110%;
+    left: 0%;
+    width: 100%;
+    height: 1px;
+    background: var(--colorSecondary);
+    border-radius: var(--borderRadius);
+}
+
+.titolo p {
+    margin-top: 20px;
+} */
+
+.titolo {
+    position: relative;
+}
+
+.titolo::before {
+    content: '';
+    position: absolute;
+    top: 110%;
+    left: 0%;
+    width: 100%;
+    height: 1px;
+    background: var(--colorSecondary);
+    border-radius: var(--borderRadius);
+}
+
+.titolo p {
+    margin-top: 10px;
+}
+
+/* .triangolo {
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-top: 100px solid red;
+} */
+
+/* BARRA NAVIGAZIONE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#popupBar {
+    top: -10%;
+}
+
+.navBar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 64px;
+    max-width: var(--pageBorder);
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+
+.icon {
+    margin-right: auto;
+    cursor: default;
+}
+
+.navBar a:hover {
+    /* color: var(--colorLinkHover); */
+    scale: 1.1;
+    transition: scale 0.1s;
+}
+
+.navBarLinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    list-style: none;
+}
+
+.navBarLinks li a {
+    position: relative;
+    display: inline-block;
+    margin-left: 40px;
+}
+
+/* ANIMAZIONI ED EFFETTI ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@keyframes slideDown {
+    from {
+        top: -10%;
+    }
+
+    to {
+        top: 0;
+    }
+}
+
+.currentPage::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Sposta l'elemento orizzontalmente indietro del 50% della sua larghezza per centrarlo */
+    width: 66.6%;
+    height: 2px;
+    background: var(--colorSecondary);
+    border-radius: var(--borderRadius);
+}
+
+
+
+.cardComp::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -8.2%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 110%;
+    background: var(--colorSecondary);
+    border-radius: var(--borderRadius);
+}
+
+.show {
+    animation: slideDown 0.7s ease forwards;
+    /* Anima l'elemento dall'alto */
+}
+
+summary:hover {
+    cursor: pointer;
+}
+
+/* HOME ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.home {
+    background-image: var(--backgroundImage);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* height: 800px; */
+    /*per abbassare img*/
+}
+
+#contentHome {
+    height: 280px;
+    margin: 200px auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    cursor: default;
+}
+
+/* COMPETENZE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.toggle {
+    display: inline-block;
+    width: 76px;
+    margin-right: 17px;
+}
+
+.toggleIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardComp {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cardComp p {
+    display: inline-block;
+}
+
+#contentCompetenze .button2{
+    background-color: hsl(359, 48%, 59%) ;
+}
+
+/* PROGETTI ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.cardProg {
+    width: 340px;
+    height: 507px;
+    margin-left: 0.7%;
+    margin-right: 0.7%;
+    /*dovrebbe essere 14 tra le card*/
+    margin-top: 0px;
+    margin-bottom: 7%;
+    border-radius: var(--borderRadius);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #FFAD60;
+    transition: scale 0.2s;
+    cursor: pointer;
+}
+
+.cardProg:hover {
+    scale: 1.05;
+}
+
+.imgCardProg {
+    width: 299px;
+    height: 276px;
+}
+
+.descrizione {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dettagli {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.durata {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#contentProgetti .button2{
+    background-color: #589148 ;
+}
+
+/* PROGETTO SINGOLO ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+/* CONTATTI ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.lettera {
+    width: 345px;
+    padding: 23px;
+    background-color: var(--colorAccent);  /*#c69e7a  #ae8259*/
+    border-radius: var(--borderRadius);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 45px;
+}
+
+.sectionLettera{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.sectionLettera input, textarea {
+    width: 299px;
+    height: 69px;
+    padding: 10px;
+    background-color: var(--colorTextBackground) ;
+    border-radius: var(--borderRadius);
+    outline: none;
+}
+
+.sectionLettera input:hover, textarea:hover{
+    cursor:text;
+}
+
+.sectionLettera input:focus, textarea:focus{
+    border: 2px solid hsl(27, 60%, 38%) ;
+}
+
+.sectionLettera button:hover{
+    border: 2px solid var(--colorAccent3);
+}
+
+
+
+#contentChiSono {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   gap: 40px;
+}
+
+.imgChiSono{
+    min-width: 345px;
+    height: 508px;
+    background-color:#ff3300;
+}
+
+.sectionsChiSono{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 140px;
+}
